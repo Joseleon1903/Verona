@@ -33,7 +33,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
     public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  
           .select()                                  
-          .apis(RequestHandlerSelectors.any())              
+          .apis(RequestHandlerSelectors.basePackage("com.example.rest.swagger.verona.rest"))
           .paths(PathSelectors.any())                          
           .build();                                           
     }

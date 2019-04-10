@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/animal/dog")
 public class DogRestController {
 
-    private static final org.springframework.http.HttpStatus HttpStatus = null;
     @Autowired
     private DogService dogService;
 
@@ -25,10 +24,10 @@ public class DogRestController {
         return dogService.buscarTodos();
     }
 
-//    @GetMapping("/{id}")
-//    public ResponseEntity<Dog> buscarPorId(@PathVariable Long id) {
-//        return ResponseEntity.ok().body(dogService.buscarPorId(id));
-//    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Dog> buscarPorId(@PathVariable Long id) {
+        return ResponseEntity.ok().body(dogService.buscarPorId(id));
+    }
 
     /*
     @DeleteMapping(value = "/{id}")
